@@ -10,15 +10,9 @@ class App extends React.Component {
         <div className="left">
           <SideNav/>
         </div>
-         <div>Hello World</div>
-         <div>Hello World</div>
-         <div>Hello World</div>
-         <div>Hello World</div>
-         
+        <div style={{paddingLeft: "2em"}}>
 
-         Hello World
-         Hello World
-         Hello World
+        </div>
       </div>
     );
   }
