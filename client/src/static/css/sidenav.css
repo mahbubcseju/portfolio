@@ -6,3 +6,9 @@
 .nav-item {
   margin-top: 1em;
 }
+
+.active {
+  background-color: #E1ECF9;
+  border-radius: .5em;
+  padding: 3px;
+}

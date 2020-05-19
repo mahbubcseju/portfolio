@@ -1,5 +1,12 @@
-const getInfo = (info = null, action) => {
-  return action.payload;
+import {combineReducers} from 'redux';
+
+const setSignIn = (signedIn = null, action) => {
+  if (action.type === 'SIGNED_IN') {
+    return action.payload;
+  }
+  return signedIn;
 }
 
-export default getInfo;
+export default combineReducers({
+  signedIn: setSignIn
+});
