@@ -6,8 +6,12 @@ class SideNav extends React.Component {
     return (
       <div>
         <div className="side-nav">
-          <i className="heart icon"></i>Profile
-
+          <div className="nav-item">
+            <i className="heart icon"></i><a href="/">Profile</a>
+          </div>
+          <div className="nav-item">
+            <i className="heart icon"></i><a href="/programming">Programming</a>
+          </div>
         </div>
       </div>
     );

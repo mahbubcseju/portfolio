@@ -7,10 +7,16 @@
 }
 
 .left {
-  width: 200px;
+  width: 250px;
   height: 100%;
   float: left;
   position: fixed;
-  font-size: 2em;
   background-color: #F5F7FA;
+}
+.right {
+  width: calc(100% - 250px);
+  padding-left: 2em;
+  height: 100%;
+  float: right;
+  background-color: #F1F5FA;
 }
