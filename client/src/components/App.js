@@ -9,18 +9,15 @@ import '../static/css/base.css'
 class App extends React.Component {
   render() {
     return (
-
-      <div className="content">
+      <Router className="content">
         <div className="left">
           <SideNav/>
         </div>
         <div className="right">
-          <Router>
-            <Route exact path="/" component={Profile} />
-            <Route path="/programming" component={Programming} />
-          </Router>
+          <Route exact path="/" component={Profile} />
+          <Route path="/programming" component={Programming} />
         </div>
-      </div>
+      </Router>
     );
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import '../static/css/sidenav.css'
 
 class SideNav extends React.Component {
@@ -7,10 +8,10 @@ class SideNav extends React.Component {
       <div>
         <div className="side-nav">
           <div className="nav-item">
-            <i className="heart icon"></i><a href="/">Profile</a>
+            <i className="heart icon"></i><Link to="/">Profile</Link>
           </div>
           <div className="nav-item">
-            <i className="heart icon"></i><a href="/programming">Programming</a>
+            <i className="heart icon"></i><Link to="/programming">Programming</Link>
           </div>
         </div>
       </div>
