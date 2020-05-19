@@ -11,10 +11,10 @@ class SideNav extends React.Component {
       <div>
         <div className="side-nav">
           <div className="nav-item">
-            <i className="heart icon"></i><NavLink exact to="/" activeClassName="active">Profile</NavLink>
+            <i className="user icon"></i><NavLink exact to="/" activeClassName="active"> Profile</NavLink>
           </div>
           <div className="nav-item">
-            <i className="heart icon"></i><NavLink exact to="/programming" activeClassName="active">Programming</NavLink>
+            <i className="code icon"></i><NavLink exact to="/programming" activeClassName="active"> Programming</NavLink>
           </div>
         </div>
       </div>
