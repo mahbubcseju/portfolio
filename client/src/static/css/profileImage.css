@@ -1,7 +1,40 @@
 .card {
   position: fixed;
-  top: 15%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, 0);
   background-color: white;
+  text-align: center;
+}
+
+.image-cropper {
+  width: 225px;
+  height: 300px;
+  text-align: center;
+  margin: auto;
+}
+
+.ReactCrop__image {
+  max-width: 225px;
+  max-height: 300px;
+}
+
+.ReactCrop {
+  max-width: 225px;
+  max-height: 300px;
+}
+
+.uploader {
+  text-align: center;
+  width: 100%;
+}
+
+p {
+  display: inline-block;
+  font-size: 1.5em;
+}
+
+input[type=file] {
+  width: 48%;
+  margin: 0 auto;
 }
