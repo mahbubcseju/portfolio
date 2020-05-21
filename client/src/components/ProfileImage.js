@@ -19,6 +19,7 @@ class ProfileImage extends React.Component {
           Upload the image:
           <input type="file" onChange={this.uploadImage}/>
         </div>
+        <button onClick={() => this.props.toggleModal()}>submit</button>
       </div>
     );
   }

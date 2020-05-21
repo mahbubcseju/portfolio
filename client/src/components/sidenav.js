@@ -14,14 +14,18 @@ class SideNav extends React.Component {
   }
 
   callModal = () => {
-    this.setState({isProfileImageUpdate: true});
+    if(this.state.isProfileImageUpdate){
+      this.setState({isProfileImageUpdate: false});
+    }else {
+      this.setState({isProfileImageUpdate: true});
+    }
   }
   
   setModal = (isProfileImageUpdate) => {
     if(isProfileImageUpdate){
       return (
         <Modal>
-          <ProfileImage/>
+          <ProfileImage toggleModal={this.callModal}/>
         </Modal>
       );
     }
