@@ -7,6 +7,14 @@ const setSignIn = (signedIn = null, action) => {
   return signedIn;
 }
 
+const profileImage = (profileImage = null, action) => {
+  if(action.type === 'GET_PROFILE_IMAGE') {
+    return action.payload;
+  }
+  return profileImage;
+}
+
 export default combineReducers({
-  signedIn: setSignIn
+  signedIn: setSignIn,
+  profileImage: profileImage
 });

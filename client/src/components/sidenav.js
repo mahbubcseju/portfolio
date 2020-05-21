@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import '../static/css/sidenav.css';
 import proimage from '../images/P-2481.jpg';
@@ -32,11 +33,13 @@ class SideNav extends React.Component {
   render() {
     const isProfileImageUpdate = this.state.isProfileImageUpdate;
     const getModal = this.setModal(isProfileImageUpdate);
+    let proImage = this.props.profileImage;
+    if ( proImage === null) proImage = proimage;
     return (
       <div>
         <div className="side-nav">
           <div className="nav-image">
-            <img src={proimage} className="ui circular image pro-image"/>
+            <img src={proImage} className="ui circular image pro-image"/>
             <div className="image-button">
               <i className="edit icon" onClick={this.callModal}/>
             </div>
@@ -54,4 +57,8 @@ class SideNav extends React.Component {
   }
 }
 
-export default SideNav;
+const mapStateToProps = (state) => {
+  return {profileImage: state.profileImage};
+}
+
+export default connect(mapStateToProps)(SideNav);
