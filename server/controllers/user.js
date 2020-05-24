@@ -1,5 +1,7 @@
 ProfilePicture = require('../models/user.js');
 Uploader = require("../services/profileUploader.js");
+mime = require('mime');
+fs = require('fs');
 
 exports.store_profile_image = function(req, res) {
   const uploader = Uploader.upload.single("image");
@@ -27,10 +29,15 @@ exports.store_profile_image = function(req, res) {
 exports.get_profile_image = function(req, res) {
   ProfilePicture.findOne({email: req.params.email})
   .then(data => {
-    res.send(data);
+    const type = mime.getType(data["image"]);
+    const img = fs.readFileSync(data["image"]);
+    res.writeHead(200, {'Content-Type': type });
+    res.write(img, "binary");
+    res.end();
   }).catch(err => {
+    console.log(err);
     res.status(500).send({
-      message: err.message | "Error occured when getting"
+      message: "Error occured when getting"
     })
   })
 };
