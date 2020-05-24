@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var userProfileImage = mongoose.Schema({
     email: {
       type: String,
+      unique: true,
       required: true
     },
     image : {

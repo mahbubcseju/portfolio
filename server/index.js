@@ -6,7 +6,7 @@ var express = require('express'),
   ;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/protfolio',
+mongoose.connect('mongodb://localhost/protfoliodb',
   {
     useNewUrlParser: true
   }).then(() => {

@@ -4,7 +4,7 @@ Uploader = require("../services/profileUploader.js");
 exports.store_profile_image = function(req, res) {
   const uploader = Uploader.upload.single("image");
   uploader(req, res, function(err){
-    if(err) {
+    if(err || !req.file) {
       return res.status(500).send({
         message: "Error in uploading" 
       });
@@ -25,7 +25,7 @@ exports.store_profile_image = function(req, res) {
 };
 
 exports.get_profile_image = function(req, res) {
-  ProfilePicture.find({email: req.params.email})
+  ProfilePicture.findOne({email: req.params.email})
   .then(data => {
     res.send(data);
   }).catch(err => {
