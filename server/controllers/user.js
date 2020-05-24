@@ -25,7 +25,7 @@ exports.store_profile_image = function(req, res) {
 };
 
 exports.get_profile_image = function(req, res) {
-  ProfilePicture.find()
+  ProfilePicture.find({email: req.params.email})
   .then(data => {
     res.send(data);
   }).catch(err => {
