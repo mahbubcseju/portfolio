@@ -5,6 +5,7 @@ import '../static/css/sidenav.css';
 import proimage from '../images/P-2481.jpg';
 import ProfileImage from './ProfileImage';
 import Modal from '../modal';
+import ProfileImageUpload from './ProfileImageUpload';
 
 
 class SideNav extends React.Component {
@@ -25,7 +26,7 @@ class SideNav extends React.Component {
     if(isProfileImageUpdate){
       return (
         <Modal>
-          <ProfileImage toggleModal={this.callModal}/>
+          <ProfileImageUpload toggleModal={this.callModal}/>
         </Modal>
       );
     }

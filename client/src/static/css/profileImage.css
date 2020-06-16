@@ -38,3 +38,9 @@ input[type=file] {
   width: 48%;
   margin: 0 auto;
 }
+
+img {
+  max-width: 225px;
+  max-height: 300px;
+  margin: auto;
+}

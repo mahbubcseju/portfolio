@@ -11,10 +11,12 @@ exports.store_profile_image = function(req, res) {
         message: "Error in uploading" 
       });
     }
+
     var newProfileImage = new ProfilePicture({
       email: req.body.email,
       image: req.file.path
     });
+
     newProfileImage.save()
     .then(data => {
       res.send(data);
@@ -23,10 +25,12 @@ exports.store_profile_image = function(req, res) {
         message: "Error occured when creating"
       });
     });
+
   });
 };
 
 exports.get_profile_image = function(req, res) {
+
   ProfilePicture.findOne({email: req.params.email})
   .then(data => {
     const type = mime.getType(data["image"]);
@@ -39,5 +43,6 @@ exports.get_profile_image = function(req, res) {
     res.status(500).send({
       message: "Error occured when getting"
     })
-  })
+  });
+
 };
