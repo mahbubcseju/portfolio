@@ -3,6 +3,7 @@ var express = require('express'),
   port = process.env.PORT || 5000,
   mongoose = require('mongoose')
   bodyParser = require('body-parser')
+  cors = require('cors')
   ;
 
 mongoose.Promise = global.Promise;
@@ -17,8 +18,12 @@ mongoose.connect('mongodb://localhost/protfoliodb',
   }
 );
 
+app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }));
+
+app.use('/static/uploads', express.static(__dirname + '/uploads'))
+
 
 let apiRoutes = require("./routes");
 app.use("/", apiRoutes);

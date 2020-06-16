@@ -11,7 +11,7 @@ import '../static/css/base.css'
 class App extends React.Component {
   render() {
     return (
-      <Router hisytory={createBrowserHistory()}>
+      <Router history={createBrowserHistory()}>
         <div className="content">
           <div className="left">
             <SideNav/>

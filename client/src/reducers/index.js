@@ -8,7 +8,7 @@ const setSignIn = (signedIn = null, action) => {
 }
 
 const profileImage = (profileImage = null, action) => {
-  if(action.type === 'GET_PROFILE_IMAGE') {
+  if(action.type === 'SET_PROFILE_IMAGE') {
     return action.payload;
   }
   return profileImage;

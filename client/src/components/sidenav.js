@@ -6,12 +6,17 @@ import proimage from '../images/P-2481.jpg';
 import ProfileImage from './ProfileImage';
 import Modal from '../modal';
 import ProfileImageUpload from './ProfileImageUpload';
+import { getProfileImage } from '../actions';
 
 
 class SideNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {isProfileImageUpdate: false};
+  }
+  
+  componentDidMount() {
+    this.props.getProfileImage('mahbuburrahman2111@gmail.com');
   }
 
   callModal = () => {
@@ -66,4 +71,4 @@ const mapStateToProps = (state) => {
   return {profileImage: state.profileImage};
 }
 
-export default connect(mapStateToProps)(SideNav);
+export default connect(mapStateToProps, { getProfileImage })(SideNav);

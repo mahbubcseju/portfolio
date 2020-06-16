@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getProfileImage } from '../actions';
+import { setProfileImage } from '../actions';
 
 import '../static/css/profileImage.css'
 import 'react-image-crop/dist/ReactCrop.css';
@@ -9,6 +9,7 @@ class ProfileImage extends React.Component {
 
   state = {
     src: null,
+    img: null,
   };
  
   componentDidMount (){
@@ -22,12 +23,18 @@ class ProfileImage extends React.Component {
         this.setState({ src: reader.result })
       );
       reader.readAsDataURL(e.target.files[0]);
+      this.setState({ image: e.target.files[0] });
     }
   }
 
   saveImage = () => {
-    this.props.getProfileImage(this.state.src);
-    this.props.toggleModal();
+    if (this.state.image != null){
+      const data = new FormData();
+      data.set('email', 'mahbuburrahman2111@gmail.com');
+      data.append('image', this.state.image)
+      this.props.setProfileImage(data);
+      this.props.toggleModal();
+    }
   }
 
   render() {
@@ -49,4 +56,4 @@ class ProfileImage extends React.Component {
   }
 }
 
-export default connect(null, {getProfileImage})(ProfileImage);
+export default connect(null, {setProfileImage})(ProfileImage);
