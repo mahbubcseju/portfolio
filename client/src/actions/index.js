@@ -37,3 +37,17 @@ export const getProfileImage = (email) => {
     );
   };
 };
+
+export const setSignedIn = (email) => {
+  return {
+    type: 'SIGNED_IN',
+    payload: email
+  }
+}
+
+export const setSignedOut = () => {
+  return {
+    type: 'SIGNED_OUT',
+    payload: null
+  }
+}

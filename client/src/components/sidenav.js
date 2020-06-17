@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import '../static/css/sidenav.css';
 import proimage from '../images/P-2481.jpg';
-import ProfileImage from './ProfileImage';
 import Modal from '../modal';
 import ProfileImageUpload from './ProfileImageUpload';
 import { getProfileImage } from '../actions';

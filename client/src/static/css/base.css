@@ -20,3 +20,9 @@
   float: right;
   background-color: #F1F5FA;
 }
+
+.second-content {
+  position: relative;
+  padding-top: 10%;
+  font-size: 1.4em;
+}

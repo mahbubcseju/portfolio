@@ -3,6 +3,4 @@ client/node_modules/*
 virtualenv/*
 .DS_Store
 .vscode/
-.server/uploads/*
-
 server/uploads/*

@@ -1,10 +1,16 @@
 import {combineReducers} from 'redux';
-
-const setSignIn = (signedIn = null, action) => {
+const auth = {
+  signedIn: null,
+  mail: null
+}
+const setSignIn = (state=auth, action) => {
   if (action.type === 'SIGNED_IN') {
-    return action.payload;
+    return { ...state, signedIn: true, mail: action.payload };
   }
-  return signedIn;
+  else if (action.type === 'SIGNED_OUT') {
+    return { ...state, signedIn: false, mail: null };
+  }
+  return state;
 }
 
 const profileImage = (profileImage = null, action) => {
@@ -15,6 +21,6 @@ const profileImage = (profileImage = null, action) => {
 }
 
 export default combineReducers({
-  signedIn: setSignIn,
+  auth: setSignIn,
   profileImage: profileImage
 });
