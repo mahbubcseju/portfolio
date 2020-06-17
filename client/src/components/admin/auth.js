@@ -35,6 +35,7 @@ class Auth extends React.Component {
               onSuccess={this.login}
               onFailure={this.login}
               cookiePolicy={'single_host_origin'}
+              isSignedIn={true}
             />
           )
         }
