@@ -4,6 +4,7 @@ import { createBrowserHistory} from 'history';
 import {connect} from 'react-redux';
 import Home from './home';
 import Auth from './admin/auth';
+import GAuth from './admin/gauth';
 import '../static/css/base.css'
 
 
@@ -11,6 +12,7 @@ class App extends React.Component {
   render() {
     return (
       <Router history={createBrowserHistory()}>
+        <GAuth/>
         <Route exact path="/" component={Home} />
         <Route path="/auth/" component={Auth} />
       </Router>

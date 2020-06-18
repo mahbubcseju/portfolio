@@ -9,6 +9,7 @@ class Auth extends React.Component {
 
   login = (response) => {
     this.props.setSignedIn(response.profileObj.email);
+    alert(response.profileObj.email);
   }
 
   logout = (response) => {
