@@ -43,11 +43,11 @@ class GAuth extends React.Component {
     return (
       <div className="auth">
         { isSignedIn?(
-            <button onClick={this.logout} className="ui red google button">
+            <button onClick={this.logout} className="ui grey google button">
               <i className="google icon">Sign Out</i>
             </button>
           ):(
-            <button onClick={this.login} className="ui red google button">
+            <button onClick={this.login} className="ui grey google button">
               <i className="google icon">Sign In</i>
             </button>
           )

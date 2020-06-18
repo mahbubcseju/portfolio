@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import { createBrowserHistory} from 'history';
 import {connect} from 'react-redux';
 import Home from './home';
@@ -13,8 +13,11 @@ class App extends React.Component {
     return (
       <Router history={createBrowserHistory()}>
         <GAuth/>
-        <Route exact path="/" component={Home} />
-        <Route path="/auth/" component={Auth} />
+        <Switch>
+          <Route path="/auth" component={Auth} />
+          <Route path="/" component={Home} />
+        </Switch>
+
       </Router>
     );
   }
